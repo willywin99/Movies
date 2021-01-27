@@ -14,5 +14,6 @@
 $router->group(['prefix' => 'api/v1', 'namespace' => 'v1'], function() use ($router) {
 
     $router->get('/movies', 'MovieController@index');
+    $router->post('/movies', 'MovieController@store');
 
 });
