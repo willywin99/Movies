@@ -75,7 +75,7 @@ class MovieController extends Controller
         return response()->json([
             'status' => 'success',
             'statuscode' => 200,
-            'data' => 'Movie berhasil diubah'
+            'data' => 'Film berhasil diubah'
         ], 200);
     }
 
@@ -87,6 +87,12 @@ class MovieController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $movie = Movie::find($id);
+        $movie->delete();
+        return response()->json([
+            'status' => 'success',
+            'statuscode' => 200,
+            'data' => 'Film berhasil dihapus'
+        ], 200);
     }
 }
