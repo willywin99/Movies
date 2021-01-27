@@ -17,5 +17,6 @@ $router->group(['prefix' => 'api/v1', 'namespace' => 'v1'], function() use ($rou
     $router->post('/movies', 'MovieController@store');
     $router->put('/movies/{id}', 'MovieController@update');
     $router->delete('/movies/{id}', 'MovieController@destroy');
+    $router->get('/movies/{id}', 'MovieController@show');
 
 });

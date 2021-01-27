@@ -53,7 +53,12 @@ class MovieController extends Controller
      */
     public function show($id)
     {
-        //
+        $movie = Movie::find($id);
+        return response()->json([
+            'status' => 'success',
+            'statuscode' => 200,
+            'data' => $movie
+        ], 200);
     }
 
     /**
