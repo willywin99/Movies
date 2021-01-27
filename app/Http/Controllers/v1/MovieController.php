@@ -65,7 +65,18 @@ class MovieController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $movie = Movie::find($id);
+        $movie->judul = $request->judul;
+        $movie->durasi = $request->durasi;
+        $movie->tanggal_rilis = $request->tanggal_rilis;
+        $movie->genre = $request->genre;
+        $movie->aktor = $request->aktor;
+        $movie->save();
+        return response()->json([
+            'status' => 'success',
+            'statuscode' => 200,
+            'data' => 'Movie berhasil diubah'
+        ], 200);
     }
 
     /**
